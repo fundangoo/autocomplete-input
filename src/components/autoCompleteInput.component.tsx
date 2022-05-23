@@ -77,6 +77,8 @@ const AutoCompleteInput: React.FC<AutoCompleteInputProps> = ({
           console.error(error);
           setCompletions([]);
         });
+    } else {
+      setCompletions([]);
     }
   }, [dataSource, debouncedSearch, filterData]);
 
@@ -89,9 +91,8 @@ const AutoCompleteInput: React.FC<AutoCompleteInputProps> = ({
   });
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
-    setCompletions([]);
-    setShowCompletions(true);
     setSearch(event.target.value);
+    setShowCompletions(!!event.target.value);
   };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
@@ -160,6 +161,7 @@ const AutoCompleteInput: React.FC<AutoCompleteInputProps> = ({
               className={`completion${completion.selected ? ' selected' : ''}`}
               onClick={(e) => handleClick(e)}
               ref={completion.selected ? scrollRef : null}
+              tabIndex={0}
             >
               <HighlightContent content={completion.value} highlight={debouncedSearch} />
             </div>
