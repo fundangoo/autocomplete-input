@@ -1,0 +1,37 @@
+:root {
+  --font-size: 25px;
+  --color-background: #000000;
+  --color-font: #000000;
+  --color-primary: #ffaa0b;
+  --color-secondary: #a169007e;
+}
+
+.App {
+  text-align: center;
+  font-size: var(--font-size);
+  font-weight: 500;
+  color: var(--color-font);
+  padding-top: 2em;
+  height: 100vh;
+  background: url('../public/beer.png') top no-repeat var(--color-background);
+}
+
+.svg-icon {
+  width: calc(var(--font-size) * 0.75);
+  height: calc(var(--font-size) * 0.75);
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+}
+
+.no-pointer {
+  pointer-events: none;
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

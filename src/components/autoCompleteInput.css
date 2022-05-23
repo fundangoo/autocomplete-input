@@ -1,0 +1,59 @@
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+.completions {
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  text-align: left;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 5px 30px var(--color-background);
+  z-index: 100;
+  overflow-y: auto;
+  max-height: 50vh;
+}
+
+/* Scrollbar adjustments */
+.completions {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-secondary);
+}
+
+.completions::-webkit-scrollbar {
+  width: 5px;
+  background: var(--color-secondary);
+  border-radius: 5px;
+}
+
+.completions::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 5px;
+}
+
+/* To look more decent, if backdrop-filter supported */
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .completions {
+    background-color: rgba(255, 255, 255, 0.25);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+}
+
+.completion {
+  display: block;
+  overflow: hidden;
+  height: 1.25em;
+  padding-left: 0.25em;
+  white-space: nowrap;
+  transition: padding-left 0.5s;
+}
+
+.completion:hover,
+.selected {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-left: 0.75em;
+  cursor: pointer;
+}

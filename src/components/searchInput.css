@@ -1,0 +1,29 @@
+.search-input {
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 5px 5px;
+  column-gap: 5px;
+  background-color: var(--color-secondary);
+}
+
+.search-input:focus-within {
+  box-shadow: inset 0px 0px 10px var(--color-primary);
+}
+
+.search-input > input {
+  min-width: 10%;
+  width: 100%;
+  display: block;
+  border: none;
+  outline: none;
+  font-size: inherit;
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.search-input > input::placeholder {
+  opacity: 0.5;
+  color: var(--color-primary);
+}
