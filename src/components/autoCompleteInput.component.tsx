@@ -162,7 +162,6 @@ const AutoCompleteInput: React.FC<AutoCompleteInputProps> = ({
               onClick={(e) => handleClick(e)}
               ref={completion.selected ? scrollRef : null}
               tabIndex={-1}
-              onBlur={handleBlur}
             >
               <HighlightContent content={completion.value} highlight={debouncedSearch} />
             </div>
